@@ -24,3 +24,16 @@
 .ship-art.hero-ship.photo-ship{width:100%!important;left:0!important;top:12%;height:76%;padding:0 14px 0 0}
 .journey-ship.photo-ship{width:100%;left:0;padding:0 18px}
 @media(max-width:760px){.ship-art.hero-ship.photo-ship{width:100%!important;left:0!important;top:0;height:94%;padding:0 12px}.journey-ship.photo-ship{width:100%;left:0;padding:0 12px}}
+
+/* Cinematic hero: supplied 2D animation replaces the static ship only in the first section. */
+.hero-video-art{display:flex;flex-direction:column;justify-content:center;padding:65px 26px 70px 22px;min-width:0;z-index:2}
+.hero-video-art .ocean-word{top:9%;left:20px;font-size:80px}
+.hero-cinema{position:relative;width:100%;border:1px solid #ffffff80;border-radius:27px;overflow:hidden;background:#06477c;box-shadow:0 30px 70px #00315d55;isolation:isolate}
+.hero-cinema video{display:block;width:100%;aspect-ratio:16/9;height:auto;object-fit:contain;background:#074a79}
+.cinema-toolbar{background:#053969;display:flex;align-items:center;justify-content:space-between;padding:13px 18px;gap:15px;color:white}
+.cinema-toolbar>span{font-size:7px;letter-spacing:.12em;display:flex;align-items:center;gap:9px}
+.cinema-toolbar i{display:block;width:6px;height:6px;background:#ff991d;border-radius:50%}
+.cinema-toolbar button{border-radius:40px;border:1px solid #ffffff55;background:#ffffff14;color:white;padding:8px 13px;font-size:10px;white-space:nowrap}
+.cinema-caption{padding:22px 4px 0;display:flex;flex-direction:column;gap:7px}.cinema-caption>span{font-weight:800;font-size:12px;letter-spacing:.08em;color:#fff}.cinema-caption small{font-size:9px;color:#dbf8ff}
+@media(min-width:1200px){.hero-video-art{padding-left:25px;padding-right:32px}.hero-cinema{width:106%;margin-left:-6%}}
+@media(max-width:760px){.hero-art.hero-video-art{height:auto;min-height:0;margin:0;padding:33px 18px 30px}.hero-video-art .ocean-word{display:none}.hero-cinema{border-radius:19px}.cinema-toolbar{padding:10px 12px}.cinema-toolbar>span{font-size:6px;letter-spacing:.06em}.cinema-toolbar button{font-size:9px;padding:7px 10px}.cinema-caption{padding-top:15px}.cinema-caption>span{font-size:10px}.cinema-caption small{font-size:8px}.hero-copy{padding-bottom:0}.hero:after{pointer-events:none}}

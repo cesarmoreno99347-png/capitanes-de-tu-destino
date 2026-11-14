@@ -28,3 +28,18 @@ modal.querySelectorAll('.modal-close,.modal-done').forEach(b=>b.addEventListener
 modal.addEventListener('click',e=>{const r=modal.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom) closeModal();});
 modal.addEventListener('close',()=>previousFocus?.focus());
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){document.querySelector('.journey')?.setAttribute('data-active',e.target.dataset.step);const counter=document.querySelector('.scene-counter');if(counter) counter.innerHTML=`0${e.target.dataset.step} — 03 <span>UN PASO A LA VEZ</span>`;}});},{threshold:0.5});document.querySelectorAll('[data-step]').forEach(e=>observer.observe(e));}
+
+// Decorative hero video: muted, visible-only playback, pause and reduced-motion support.
+const heroVideo=document.querySelector('#hero-cruise-video');
+const heroToggle=document.querySelector('#hero-video-toggle');
+if(heroVideo && heroToggle){
+ const motion=matchMedia('(prefers-reduced-motion: reduce)');let userPaused=false;let visible=true;
+ function syncVideoUI(){const paused=heroVideo.paused;heroToggle.textContent=paused?'Reproducir ▶':'Pausar Ⅱ';heroToggle.setAttribute('aria-label',paused?'Reproducir animación':'Pausar animación');}
+ function startVideo(){if(!userPaused&&!motion.matches&&visible&&!document.hidden)heroVideo.play().catch(()=>syncVideoUI());else heroVideo.pause();}
+ heroVideo.addEventListener('play',syncVideoUI);heroVideo.addEventListener('pause',syncVideoUI);
+ if(motion.matches){heroVideo.autoplay=false;heroVideo.pause();}
+ heroToggle.addEventListener('click',()=>{if(heroVideo.paused){userPaused=false;heroVideo.play().catch(()=>syncVideoUI());}else{userPaused=true;heroVideo.pause();}});
+ new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;startVideo();},{threshold:.1}).observe(heroVideo);
+ document.addEventListener('visibilitychange',startVideo);motion.addEventListener('change',startVideo);
+ heroVideo.addEventListener('error',()=>{heroToggle.hidden=true;});syncVideoUI();
+}
