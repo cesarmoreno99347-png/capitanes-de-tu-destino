@@ -1,6 +1,6 @@
 # Capitanes de tu Destino
 
-Primera vista de diseño para la comunidad de César Moreno, socio independiente de InCruises.
+Segunda vista de diseño para la comunidad de César Moreno, socio independiente de InCruises.
 
 ## Abrir y comprobar
 
@@ -12,7 +12,7 @@ Con Node: `npm run check` comprueba la sintaxis del JavaScript. No existe un bui
 - `emprende.html`: presentación independiente de negocio.
 - `assets/styles.css`: sistema visual y responsive.
 - `assets/app.js`: navegación, desglose de planes, modales y scroll.
-- `assets/ship.svg`: ilustración original en perspectiva, NO modelo WebGL 3D.
+- `assets/ship3d.js`: modelo geométrico 3D original, con WebGL y renderizado SVG de respaldo. Three.js fijado a 0.180.0 y distribuido con su licencia. La imagen de referencia de membresías es ilustrativa, no un testimonio.
 
 ## Estado y límites
 
@@ -30,7 +30,7 @@ La información inicial de membresías procede del contrato 106ES de abril de 20
 4. Fotos autorizadas de César y comunidad; testimonios en sus palabras.
 5. Contrastar y completar cinco vías de compensación con guía vigente; no hay nombres ni porcentajes inventados.
 6. Definir número WhatsApp y enlace de agenda; config actual nula.
-7. Evaluar modelo 3D ligero real después de aprobar composición.
+7. Refinar el modelo 3D con comentarios de César.
 8. Elegir alojamiento y dominio. No hay despliegue automático configurado.
 
 No se ha publicado mediante GitHub Pages ni otro alojamiento.
